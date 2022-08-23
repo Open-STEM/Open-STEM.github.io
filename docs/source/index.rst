@@ -1,22 +1,30 @@
-Welcome to Lumache's documentation!
-===================================
+.. WPIGSILib documentation master file, created by
+   sphinx-quickstart on Sun Aug 21 08:33:06 2022.
+   You can adapt this file completely to your liking, but it should at least
+   contain the root `toctree` directive.
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+Welcome to WPIGSILib documentation!
+=====================================
 
-Check out the :doc:`usage` section for further information, including
-how to :ref:`installation` the project.
+.. note
 
-.. note::
-
-   This project is under active development.
-
-Contents
---------
+   This project is under active development and the API references are subject to change at any time.
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+   
+   building-the-robot/index
+   driving/index
+   distance-measuring/index
+   line-following/index
+   using-the-arm/index
+   delivery-robot/index
 
-   usage
-   api
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`
