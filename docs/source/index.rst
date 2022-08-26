@@ -4,7 +4,7 @@
    contain the root `toctree` directive.
 
 Welcome to WPIGSILib documentation!
-=====================================
+===================================
 
 .. note
 
@@ -14,6 +14,7 @@ Welcome to WPIGSILib documentation!
    :maxdepth: 2
    :caption: Contents:
    
+   introduction/index
    building-the-robot/index
    driving/index
    distance-measuring/index
