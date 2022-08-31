@@ -21,6 +21,7 @@ Welcome to WPIGSILib documentation!
    line-following/index
    using-the-arm/index
    delivery-robot/index
+   api
 
 
 Indices and tables
