@@ -1,11 +1,20 @@
-import board as _board
-from . import _drivetrain
-from . import _grove_ultrasonic
-from . import _reflectance
-from . import _servo
-from . import _buttons
-from . import _encoded_motor
-from . import _led
+#import board as _board
+try: # regular python
+    from . import _drivetrain
+    from . import _grove_ultrasonic
+    from . import _reflectance
+    from . import _servo
+    from . import _buttons
+    from . import _encoded_motor
+    from . import _led
+except: # documentation
+    import _drivetrain
+    import _grove_ultrasonic
+    import _reflectance
+    import _servo
+    import _buttons
+    import _encoded_motor
+    import _led
 
 import time
 

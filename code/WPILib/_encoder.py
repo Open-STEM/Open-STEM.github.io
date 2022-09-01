@@ -1,5 +1,5 @@
 # Write your code here :-)
-import rotaryio
+#import rotaryio
 
 class Encoder:
 

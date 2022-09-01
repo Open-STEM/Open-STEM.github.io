@@ -1,4 +1,4 @@
-import neopixel
+#import neopixel
 
 class RGBLED:
 

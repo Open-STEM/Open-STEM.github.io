@@ -44,7 +44,7 @@ library.
 """
 
 import time
-from digitalio import DigitalInOut, Direction
+#from digitalio import DigitalInOut, Direction
 
 # Took this idea from adafruit_debouncer.py
 # Find out whether the current CircuitPython supports time.monotonic_ns(),

@@ -1,5 +1,5 @@
-import pwmio
-from adafruit_motor import servo
+#import pwmio
+#from adafruit_motor import servo
 
 class Servo:
 
