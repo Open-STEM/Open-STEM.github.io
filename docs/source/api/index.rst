@@ -3,7 +3,7 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to WPIGSILib documentation!
+API
 ===================================
 
 .. note
@@ -11,22 +11,10 @@ Welcome to WPIGSILib documentation!
    This project is under active development and the API references are subject to change at any time.
 
 .. toctree::
-   :maxdepth: 2
-   :caption: Contents:
    
-   introduction/index
-   building-the-robot/index
-   driving/index
-   distance-measuring/index
-   line-following/index
-   using-the-arm/index
-   delivery-robot/index
-   api/index
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   buttons
+   drivetrain
+   led
+   reflectance
+   servo
+   sonar
