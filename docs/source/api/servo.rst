@@ -2,5 +2,9 @@
 Servo
 ===================================
 
-.. autofunction:: _servo.Servo.set_degrees
-   
+.. py:function:: set_degrees(self, degrees) -> None:
+    
+    Tells the servo to move to the specified position
+
+    :param degrees: The angle for the servo to move to, bound in [0,135]
+    :type degrees: int
