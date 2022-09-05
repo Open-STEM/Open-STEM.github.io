@@ -16,15 +16,15 @@ class Buttons:
     def is_GP20_pressed(self) -> bool:
         """
         Get whether the GP20 button on the RP2040 microcontroller has been pressed
-        : return: if the GP20 button was pressed
-        : rtype: bool
+        :return: if the GP20 button was pressed
+        :rtype: bool
         """
         return not self._buttonGP20.value
 
     def is_GP21_pressed(self) -> bool:
         """
         Get whether the GP21 button on the RP2040 microcontroller has been pressed
-        : return: if the GP21 button was pressed
-        : rtype: bool
+        :return: if the GP21 button was pressed
+        :rtype: bool
         """
         return not self._buttonGP21.value
