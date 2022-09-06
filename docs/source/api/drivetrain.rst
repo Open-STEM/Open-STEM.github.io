@@ -53,3 +53,6 @@ Drivetrain
 .. py:function:: drivetrain.get_encoder_position(self) -> tuple:
         
     Return the current position of left and right motors' encoders in degrees as a tuple.
+
+    Example usage:
+    :python:`left_position, right_position = drivetrain.get_encoder_position()`

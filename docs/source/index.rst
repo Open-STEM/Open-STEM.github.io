@@ -14,15 +14,11 @@ Welcome to WPIGSILib documentation!
    :maxdepth: 2
    :caption: Contents:
    
-   introduction/index
-   building-the-robot/index
-   driving/index
-   distance-measuring/index
-   line-following/index
-   using-the-arm/index
-   delivery-robot/index
    api/index
 
+
+.. role:: python(code)
+   :language: python
 
 Indices and tables
 ==================

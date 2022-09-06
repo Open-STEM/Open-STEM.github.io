@@ -8,7 +8,6 @@ On the Adafruit Maker Pi RP2040, there are two Neopixel LEDs that can light up i
 .. py:function:: led.set_color(red: int, green: int, blue: int):
 
         Sets the color of the led by taking in the RGB representation of the color.
-        For example :code:`led.set_color(255,0,0)` will make the color red.
 
         :param red: The red value [0-255]
         :type red: int
