@@ -32,4 +32,6 @@ Finally, let's test some code out. Add the following code to code.py:
 .. figure:: helloworld.png
 	:scale: 50%
 
-Then, click the 'Save' button. You should see the robot immediately start going forward for 20 centimeters. At the end, it should log "Hello World" on your computer through serial output. If nothing goes wrong, then you have successfully set up the software and are ready to write more intricate code!
+Then, click the 'Save' button. Note that pressing Control-D will also run your code.
+
+You should see the robot immediately start going forward for 20 centimeters. At the end, it should log "Hello World" on your computer through serial output. If nothing goes wrong, then you have successfully set up the software and are ready to write more intricate code!

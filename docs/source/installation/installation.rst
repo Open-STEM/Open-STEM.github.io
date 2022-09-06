@@ -26,7 +26,7 @@ In the figure below, you'll notice a symbol of a red 'x' on a microchip.
 .. figure:: disconnected.png
 	:scale: 50%
 
-This indicates that Mu has not detected a robot device attached to the computer. In order to write and download programs to the robot, you'll need to connect your computer to the robot via a Micro USB cable. Turn your robot on.
+This indicates that Mu has not detected a robot device attached to the computer. In order to write and download programs to the robot, you'll need to connect your computer to the robot via a Micro-USB cable. Turn your robot on.
 
 .. figure:: connected.png
 	:scale: 50%
