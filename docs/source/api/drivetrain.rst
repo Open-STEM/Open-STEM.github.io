@@ -15,7 +15,7 @@ Drivetrain
     :return: if the distance was reached before the timeout
     :rtype: bool
 
-.. py:function:: go_turn(self, turn_degrees: float, speed: float = 0.5, timeout: float = None) -> bool:
+.. py:function:: drivetrain.go_turn(self, turn_degrees: float, speed: float = 0.5, timeout: float = None) -> bool:
         
     Turn the robot some relative heading given in turnDegrees, and exit function when the robot has reached that heading. Speed is bounded from -1 (turn counterclockwise the relative heading at full speed) to 1 (turn clockwise the relative heading at full speed)
 
@@ -28,7 +28,7 @@ Drivetrain
     :return: if the distance was reached before the timeout
     :rtype: bool
 
-.. py:function:: set_effort(self, left_effort: float, right_effort: float) -> None:
+.. py:function:: drivetrain.set_effort(self, left_effort: float, right_effort: float) -> None:
 
     Set the raw effort of both motors individually
 
@@ -37,11 +37,11 @@ Drivetrain
     :param rightEffort: The power (Bounded from -1 to 1) to set the right motor to.
     :type rightEffort: float
 
-.. py:function:: stop(self) -> None:
+.. py:function:: drivetrain.stop(self) -> None:
     
     Stops both drivetrain motors
 
-.. py:function:: set_encoder_position(self, left_degrees: float, right_degrees: float) -> None:
+.. py:function:: drivetrain.set_encoder_position(self, left_degrees: float, right_degrees: float) -> None:
 
     Set the position of the motors' encoders in degrees. Note that this does not actually move the motor but just recalibrates the stored encoder value. If only one encoder position is specified, the encoders for each motor will be set to that position.
 
@@ -50,6 +50,6 @@ Drivetrain
     :param rightDegrees: The distance to recalibrate the left encoder to.
     :type rightDegrees: float
 
-.. py:function:: def get_encoder_position(self) -> tuple:
+.. py:function:: drivetrain.get_encoder_position(self) -> tuple:
         
     Return the current position of left and right motors' encoders in degrees as a tuple.

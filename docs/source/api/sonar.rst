@@ -2,7 +2,7 @@
 Sonar
 ===================================
 
-.. py:function:: get_distance(self) -> float:
+.. py:function:: sonar.get_distance(self) -> float:
 
 	Return the distance measured by the sensor in cm.
 
