@@ -49,19 +49,77 @@ A positive angle denotes a clockwise turn, and similar to go_straight(), you can
 
     def main():
         drivetrain.go_turn(90, -1)
-        print("Hello World")
+        print("Hello World")z
 
 This code will now turn 90 degrees counterclockwise (as speed is negative), before displaying the same message in the serial log as before.
 
 Using Sensor Input
 ------------------
 
+The easiest "sensors" to interact with on the robot are definitely the two buttons on the circuit board. WPIGSILib has two different functions used to interact with them, but the two buttons behave the same.
 
+.. code::
+
+    buttons.is_GP20_pressed()
+    buttons.is_GP21_pressed()
+
+These methods take in no parameters and return true if the button is currently pressed, and false otherwise. 
+
+A great application for these buttons can be found in the SampleCode, within sample_miscellaneous.py
+
+.. code::
+
+    def wait_for_button():
+        print("Waiting for button signal from either button")
+
+        # Wait until user command before running
+        while not (buttons.is_GP20_pressed() or buttons.is_GP21_pressed()):
+            time.sleep(.01)
+
+        print("Button input found; Program starting")
+
+This method uses a while loop to wait until there is a button input from either button before continuing to the rest of the code. 
+This is very useful to put at the beginning of your main() method, as by default the code will run as soon as you upload the new code to the bot, but with this the code will not run until after you press one of the buttons.
+
+The next sensor we will look at is the ultrasonic distance sensor, which measures the distance from the front of the sonar to the nearest object in a straight line from the sensor. There is just one method we use to get input from the sonar:
+
+.. code::
+
+    sonar.get_distance()
+
+This method takes in no parameters, and returns the distance in centimeters.
+
+Something cool we can do with this sensor is have the robot try to maintain a constant distance from itself to the nearest target:
+
+.. code::
+    def standoff(target_distance: float = 10.0):
+        KP = 0.2
+        while True:
+            distance = sonar.get_distance()
+            error = distance - target_distance
+            drivetrain.set_effort(error * KP, error*KP)
+            time.sleep(0.01)
+
+This example takes advantage of a technique called Proportional Control, where the power sent to the motors is some function of the error, which is the difference between the current and target values. It's a very flexible and powerful technique when mastered.
+
+The last sensor(s) on the robot are the reflectance sensors, which measure how much light is reflected off of a nearby surface. Usually, they are mounted below the robot so that they can sense the color or material differences between two points. 
+The value that the sensor outputs is hard to grasp in terms of real world values (higher number usually means a lighter color surface), so most of the time we use two sensors together so that we compare them.
+
+.. code::
+
+    def line_track():
+        base_effort = 0.6
+        KP = 0.02
+        while True:
+            error = reflectance.get_left_reflectance() - reflectance.get_right_reflectance()
+            drivetrain.set_effort(base_effort + error * KP, base_effort -  error * KP)
+
+This code does exactly that, taking in the left and right reflectances to get an error, and then uses that to adjust left or right so that the robot can follow a line.
 
 How to Use The Existing Sample Code
 -----------------------------------
 
-Sample code is contained within the onboard code inside of the SampleCode directory. 
+Some sample code (including most of the code used on this page) is contained within the onboard code inside of the SampleCode directory. 
 
 When you first download the library, code.py should already be populated with the following optional imports:
 
