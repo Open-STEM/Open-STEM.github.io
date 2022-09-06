@@ -15,6 +15,7 @@ Welcome to WPIGSILib documentation!
    :caption: Contents:
    
    examples/index
+   installation/index.rst
    api/index
 
 Indices and tables
