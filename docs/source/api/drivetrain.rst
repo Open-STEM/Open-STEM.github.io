@@ -2,6 +2,9 @@
 Drivetrain
 ===================================
 
+.. role:: python(code)
+   :language: python
+   
 .. py:function:: drivetrain.go_straight(distance: float, speed: float = 0.5, timeout: float = None) -> None
 
     Go forward the specified distance in centimeters, and exit function when distance has been reached. Speed is bounded from -1 (reverse at full speed) to 1 (forward at full speed)
