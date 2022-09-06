@@ -14,8 +14,9 @@ Welcome to WPIGSILib documentation!
    :maxdepth: 2
    :caption: Contents:
    
+   
+   installation/index
    examples/index
-   installation/index.rst
    api/index
 
 Indices and tables
