@@ -2,7 +2,7 @@
 Servo
 ===================================
 
-.. py:function:: servo.set_degrees(degrees) -> None:
+.. py:function:: servo.set_degrees(degrees: int) -> None:
     
     Tells the servo to move to the specified position
 

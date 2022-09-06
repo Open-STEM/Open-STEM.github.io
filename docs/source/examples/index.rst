@@ -124,6 +124,52 @@ Neither of these methods take in parameters. The value that the sensor outputs i
 
 This code does exactly that, taking in the left and right reflectances to get an error, and then uses that to adjust left or right so that the robot can follow a line.
 
+Servo and LED Control
+---------------------
+
+On board the robot there is a servo. A servo is a motor with a limited range, meaning that it can only travel a span of 135 degrees. To control the servo, there is only 1 method needed:
+
+.. code::
+
+    servo.set_degrees(degrees: int)
+
+The servo is controlled by an integer number of degrees, so you can only tell it to go to an integer angle.
+
+.. code::
+
+    def main():
+        while True:
+            if buttons.is_GP20_pressed():
+                servo.set_degrees(0)
+            if buttons.is_GP21_pressed():
+                servo.set_degrees(135)
+            time.sleep(0.01)
+
+This sample code shows a way that the robot can respond to user input, checking every 10 milliseconds (0.01 seconds) for a button input, and then moving to a new position if it finds it.
+
+Lastly, the board contains two RGB (Red-Blue-Green) LEDs that can light up in any color, but you do nopt have independent control of the two LEDs, they are always controlled in sync. There are two different functions for controlling the LEDs.
+
+.. code::
+
+    led.set_color(red: int, green: int, blue: int)
+    led.set_brightness(brightness: float)
+
+Using the LEDs are a two step process. First, you set the intended color in RGB format (each bound from 0-255), using set_color. Then, you set the brightness of the pixels [From 0 (off) to 1 (full brightness)].
+
+.. code::
+
+    def main():
+        led.set_brightness(1)
+        while True:
+            random_red = random.randint(0,255)
+            random_green = random.randint(0,255)
+            random_blue = random.randint(0,255)
+            led.set_color(random_red,random_green,random_blue)
+            time.sleep(1)
+
+This code will change the LEDs to be a random color every second. LEDs could be used functionally to show which step of the code is running or to send signals to the user while running just by setting the color in between larger steps of the program.
+
+
 How to Use The Existing Sample Code
 -----------------------------------
 
@@ -149,4 +195,4 @@ From there, using the sample methods is as simple as placing the calls to them w
         #
         polygon(side_length = 10, number_of_sides = 5)
 
-wait_for_button() is also a sample method, located within SampleCode.sample_miscellaneous.py. Placing it at the beginning of main() causes the code to wait for the button input before running, which is often a desireable property.
+wait_for_button() is also a sample method, located within SampleCode.sample_miscellaneous.py. Placing it at the beginning of main() causes the code to wait for a button input before running, which is often a desireable property.
