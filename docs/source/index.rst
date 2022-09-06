@@ -16,10 +16,6 @@ Welcome to WPIGSILib documentation!
    
    api/index
 
-
-.. role:: python(code)
-   :language: python
-
 Indices and tables
 ==================
 
