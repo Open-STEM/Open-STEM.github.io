@@ -2,9 +2,6 @@
 Buttons
 ===================================
 
-Getting button input
---------------------
-
 On the Adafruit Maker Pi RP2040, there are two buttons that can recieve input accessible in the code, labeled on the board as GP20 and GP21 respectively. 
 
 .. py:function:: buttons.is_GP20_pressed() -> bool
