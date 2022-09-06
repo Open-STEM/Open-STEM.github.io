@@ -92,6 +92,7 @@ This method takes in no parameters, and returns the distance in centimeters.
 Something cool we can do with this sensor is have the robot try to maintain a constant distance from itself to the nearest target:
 
 .. code::
+    
     def standoff(target_distance: float = 10.0):
         KP = 0.2
         while True:
