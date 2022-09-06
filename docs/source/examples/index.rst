@@ -92,7 +92,7 @@ This method takes in no parameters, and returns the distance in centimeters.
 Something cool we can do with this sensor is have the robot try to maintain a constant distance from itself to the nearest target:
 
 .. code::
-    
+
     def standoff(target_distance: float = 10.0):
         KP = 0.2
         while True:
@@ -104,7 +104,14 @@ Something cool we can do with this sensor is have the robot try to maintain a co
 This example takes advantage of a technique called Proportional Control, where the power sent to the motors is some function of the error, which is the difference between the current and target values. It's a very flexible and powerful technique when mastered.
 
 The last sensor(s) on the robot are the reflectance sensors, which measure how much light is reflected off of a nearby surface. Usually, they are mounted below the robot so that they can sense the color or material differences between two points. 
-The value that the sensor outputs is hard to grasp in terms of real world values (higher number usually means a lighter color surface), so most of the time we use two sensors together so that we compare them.
+
+
+.. code::
+
+    reflectance.get_left_reflectance()
+    reflectance.get_right_reflectance()
+
+Neither of these methods take in parameters. The value that the sensor outputs is hard to grasp in terms of real world values (higher number usually means a lighter color surface), so most of the time we use the two sensors (right and left) together so that we can compare them.
 
 .. code::
 
