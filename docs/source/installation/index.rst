@@ -13,4 +13,4 @@ API
 .. toctree::
    
    installation
-   
+   robotlib
