@@ -20,7 +20,7 @@ Drivetrain
         
     Turn the robot some relative heading given in turnDegrees, and exit function when the robot has reached that heading. Speed is bounded from -1 (turn counterclockwise the relative heading at full speed) to 1 (turn clockwise the relative heading at full speed)
 
-    :param turnDegrees: The number of angle for the robot to turn (In Degrees)
+    :param turn_degrees: The number of angle for the robot to turn (In Degrees)
     :type turnDegrees: float
     :param speed: The speed for which the robot to travel (Bounded from -1 to 1). Default is half speed forward.
     :type speed: float
@@ -33,9 +33,9 @@ Drivetrain
 
     Set the raw effort of both motors individually
 
-    :param leftEffort: The power (Bounded from -1 to 1) to set the left motor to.
+    :param left_effort: The power (Bounded from -1 to 1) to set the left motor to.
     :type leftEffort: float
-    :param rightEffort: The power (Bounded from -1 to 1) to set the right motor to.
+    :param right_effort: The power (Bounded from -1 to 1) to set the right motor to.
     :type rightEffort: float
 
 .. py:function:: drivetrain.stop() -> None:
@@ -54,7 +54,7 @@ Drivetrain
 
     Set the position of the motors' encoders in degrees. Note that this does not actually move the motor but just recalibrates the stored encoder value. If only one encoder position is specified, the encoders for each motor will be set to that position.
 
-    :param leftDegrees: The distance to recalibrate the left encoder to.
+    :param left_degrees: The distance to recalibrate the left encoder to.
     :type leftDegrees: float
-    :param rightDegrees: The distance to recalibrate the left encoder to.
+    :param right_degrees: The distance to recalibrate the left encoder to.
     :type rightDegrees: float

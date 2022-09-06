@@ -111,7 +111,7 @@ The last sensor(s) on the robot are the reflectance sensors, which measure how m
     reflectance.get_left_reflectance()
     reflectance.get_right_reflectance()
 
-Neither of these methods take in parameters. The value that the sensor outputs is hard to grasp in terms of real world values (higher number usually means a lighter color surface), so most of the time we use the two sensors (right and left) together so that we can compare them.
+Neither of these methods take in parameters. The value that the sensor outputs is hard to grasp in terms of real world values (higher number usually means a lighter color or more reflective surface), so most of the time we use the two sensors (right and left) together so that we can compare them.
 
 .. code::
 
