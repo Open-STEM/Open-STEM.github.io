@@ -145,7 +145,7 @@ The servo is controlled by an integer number of degrees, so you can only tell it
                 servo.set_degrees(135)
             time.sleep(0.01)
 
-This sample code shows a way that the robot can respond to user input, checking every 10 milliseconds (0.01 seconds) for a button input, and then moving to a new position if it finds it.
+This sample code shows a way that the robot can respond to user input, checking every 10 milliseconds (0.01 seconds) for a button input, and then moving the servo to a new position if it finds it.
 
 Lastly, the board contains two RGB (Red-Blue-Green) LEDs that can light up in any color, but you do nopt have independent control of the two LEDs, they are always controlled in sync. There are two different functions for controlling the LEDs.
 
