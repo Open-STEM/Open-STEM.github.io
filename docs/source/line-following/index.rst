@@ -25,7 +25,7 @@ Isn't that interesting?
 The sensor is manufactured by a company named Pololu. The sensor is a linear array of six Infrared light emitters and receivers. The infrared light emitted by the sensors is reflected from the tape and the floor. Since there is a change in reflectivity between different materials, the reflected light is not the same. The receivers can make out the difference between the reflections from the ground and those from the tape. 
 This difference is sensed by the sensor and it shall be enough to recognize and follow a line. Are you excited to learn how that is possible? And what can we do with it? Please read on. 
 Please think about what you would receive from the sensor and what would you want the robot to do with this information. Here is a hint, the sensor is going to send reflectivity values to your robot. Now, what can you do with this information?  
-Here is how the code could look like:
+Here is how the code could look like :
 
 # Characterize line sensors
 def checkLineSensors():
