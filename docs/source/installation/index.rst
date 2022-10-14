@@ -11,7 +11,7 @@ Installation
    This project is under active development and the API references are subject to change at any time.
 
 Installing Mu
-=============
+-------------
 
 Mu is a simple and concise editor that allows us to edit our CircuitPython code, and view serial output from our robot. To install, go to the following webpage:
 https://codewith.mu/en/download
@@ -46,7 +46,7 @@ This indicates that Mu has not detected a robot device attached to the computer.
 Once you've done this, the red 'x' on the symbol should disappear, and this indicates you've successfully connected to the robot.
 
 Installing the robot library
-=========================
+----------------------------
 
 Our robot library makes it easy to give different commands to the robot. Go to [link], download the zipped folder, and unzip it.
 
