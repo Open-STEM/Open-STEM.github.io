@@ -44,17 +44,17 @@ Drivetrain
 
 .. py:function:: drivetrain.get_left_encoder_position() -> float:
         
-    Return the current position of the left motor's encoder in degrees.
+    Return the current position of the left motor's encoder in revolutions.
     
 .. py:function:: drivetrain.get_right_encoder_position() -> float:
         
-    Return the current position of the right motor's encoder in degrees.
+    Return the current position of the right motor's encoder in revolutions.
     
-.. py:function:: drivetrain.set_encoder_position(left_degrees: float, right_degrees: float) -> None:
+.. py:function:: drivetrain.set_encoder_position(left_position: float, right_position: float) -> None:
 
-    Set the position of the motors' encoders in degrees. Note that this does not actually move the motor but just recalibrates the stored encoder value. If only one encoder position is specified, the encoders for each motor will be set to that position.
+    Set the position of the motors' encoders in revolutions. Note that this does not actually move the motor but just recalibrates the stored encoder value. If only one encoder position is specified, the encoders for each motor will be set to that position.
 
-    :param left_degrees: The distance to recalibrate the left encoder to.
+    :param left_position: The distance to recalibrate the left encoder to.
     :type leftDegrees: float
-    :param right_degrees: The distance to recalibrate the left encoder to.
+    :param right_position: The distance to recalibrate the left encoder to.
     :type rightDegrees: float
