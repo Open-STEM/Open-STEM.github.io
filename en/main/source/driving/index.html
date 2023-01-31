@@ -1,0 +1,285 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Getting the robot to move &mdash; OpenSTEM 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../modules.html" class="icon icon-home"> OpenSTEM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code.html">code module</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../modules.html">OpenSTEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../modules.html">Docs</a> &raquo;</li>
+        
+      <li>Getting the robot to move</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/Open-STEM/Open-STEM.github.io/blob/main/docs/source/driving/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="getting-the-robot-to-move">
+<h1>Getting the robot to move<a class="headerlink" href="#getting-the-robot-to-move" title="Permalink to this heading">¶</a></h1>
+<p>Controlling the robots driving</p>
+<section id="differential-steering">
+<h2>Differential steering<a class="headerlink" href="#differential-steering" title="Permalink to this heading">¶</a></h2>
+<p>One of the things that you’ll want to do is control the direction that your robot drives. Since there is no steering wheel like you would find on a car, the way to control the robot is by varying the wheel speeds relative to each other. This is called differential steering because the difference in wheel speeds controls the direction of the robot.</p>
+</section>
+<section id="driving-straight">
+<h2>Driving straight<a class="headerlink" href="#driving-straight" title="Permalink to this heading">¶</a></h2>
+<p>When both the left wheels and the right wheels are moving forward at the same speed, the robot will drive in a straight line. This is illustrated in the following image where the wheel speeds are shown by the length and direction of the arrows:</p>
+<ul class="simple">
+<li><p>Both arrows going forward means the wheels are turning in a direction that causes the robot to move forward and</p></li>
+<li><p>The length of the arrows being equal indicates the wheels are each going at the same speed.</p></li>
+</ul>
+<figure class="align-default" id="id1">
+<a class="reference internal image-reference" href="../../_images/drivingForward.png"><img alt="../../_images/drivingForward.png" src="../../_images/drivingForward.png" style="width: 433.0px; height: 329.5px;" /></a>
+<figcaption>
+<p><span class="caption-text">Robot with both wheels turning forward at the same speed. The robot drives forward in this case.</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+<section id="turning">
+<h2>Turning<a class="headerlink" href="#turning" title="Permalink to this heading">¶</a></h2>
+<p>When turning there are a variety of paths that the robot might follow from making a gentle curving turn to a hard right or left turn in place. All of these variations can be achieved using differential steering where the difference in speed and direction of the wheels will cause the robot to make various types of turns. We’ll look at various turning requirements and see how each one can be accomplished by changing the motor and wheel speeds.</p>
+<section id="making-a-sweeping-turn-right-or-left">
+<h3>Making a sweeping turn right or left<a class="headerlink" href="#making-a-sweeping-turn-right-or-left" title="Permalink to this heading">¶</a></h3>
+<p>To make the robot make a left or right turn the wheels turn at different speeds. If the left wheel turns faster than the right wheel, the left side of the robot tries to get ahead of the right side, resulting in a right turn. Similarly, if the right wheel turns faster than the left, the robot turns to the left. Here is an example of wheel speeds that will cause the robot to turn to the left.</p>
+<figure class="align-default" id="id2">
+<a class="reference internal image-reference" href="../../_images/leftTurn.png"><img alt="../../_images/leftTurn.png" src="../../_images/leftTurn.png" style="width: 924.0px; height: 680.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">Robot with a difference in the wheel speeds</span><a class="headerlink" href="#id2" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>A robot with the right wheel turns faster than the left wheel causing the robot to turn to the left.</p>
+<p>The radius of the turn depends on the difference between the wheels, a larger difference between the wheel speeds results in a tighter and a smaller radius turn, while a smaller difference results in a wider turn and a larger radius.</p>
+</section>
+<section id="making-a-swing-turn">
+<h3>Making a <em>swing</em> turn<a class="headerlink" href="#making-a-swing-turn" title="Permalink to this heading">¶</a></h3>
+<p>If one of the wheels is not moving at all while the other wheel is turning, then the robot will make a <em>swing</em> turn where the center of the rotation of the robot will be on the non-moving wheel. For example, if the right wheel is turning and the right wheel is fixed, then the robot will make a turn that pivots on the left (non-moving) wheel.</p>
+<figure class="align-default" id="id3">
+<a class="reference internal image-reference" href="../../_images/swingTurn.png"><img alt="../../_images/swingTurn.png" src="../../_images/swingTurn.png" style="width: 924.0px; height: 657.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">A swing turn rotating on the left wheel.</span><a class="headerlink" href="#id3" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>The robot’s path is circular with the turning wheel (right side) forming the outside of the circle and the radius of the circle will be wheel track (distance between the wheel centers).</p>
+</section>
+<section id="point-turn">
+<h3>Point turn<a class="headerlink" href="#point-turn" title="Permalink to this heading">¶</a></h3>
+<p>Another type of turn is often referred to as a point turn where the left and right wheels turn in at an equal speed but in opposite directions. With this turn, the center of rotation is a point approximately between the left and right wheels. This is used for making, for example, a 90-degree turn in place.</p>
+<figure class="align-default" id="id4">
+<a class="reference internal image-reference" href="../../_images/pointTurn.png"><img alt="../../_images/pointTurn.png" src="../../_images/pointTurn.png" style="width: 880.0px; height: 653.0px;" /></a>
+<figcaption>
+<p><span class="caption-text">Point turn causes the robot will turn in place.</span><a class="headerlink" href="#id4" title="Permalink to this image">¶</a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="programming-the-robot-to-drive">
+<h2>Programming the robot to drive<a class="headerlink" href="#programming-the-robot-to-drive" title="Permalink to this heading">¶</a></h2>
+<section id="creating-your-first-program">
+<h3>Creating your first program<a class="headerlink" href="#creating-your-first-program" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="programming-the-robot-to-drive-forwards-and-backwards">
+<h3>Programming the robot to drive forwards and backwards<a class="headerlink" href="#programming-the-robot-to-drive-forwards-and-backwards" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="programming-the-robot-to-turn">
+<h3>Programming the robot to turn<a class="headerlink" href="#programming-the-robot-to-turn" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="programming-the-robot-to-drive-in-a-square-pattern">
+<h3>Programming the robot to drive in a square pattern<a class="headerlink" href="#programming-the-robot-to-drive-in-a-square-pattern" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="using-a-loop-to-improve-the-square-program">
+<h3>Using a loop to improve the square program<a class="headerlink" href="#using-a-loop-to-improve-the-square-program" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="being-more-efficient-using-functions">
+<h2>Being more efficient - using functions<a class="headerlink" href="#being-more-efficient-using-functions" title="Permalink to this heading">¶</a></h2>
+<section id="making-a-square-drawing-function">
+<h3>Making a square drawing function<a class="headerlink" href="#making-a-square-drawing-function" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="making-a-polygon-drawing-function">
+<h3>Making a polygon drawing function<a class="headerlink" href="#making-a-polygon-drawing-function" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

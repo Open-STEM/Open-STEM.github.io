@@ -1,0 +1,290 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Drivetrain &mdash; OpenSTEM 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../modules.html" class="icon icon-home"> OpenSTEM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code.html">code module</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../modules.html">OpenSTEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../modules.html">Docs</a> &raquo;</li>
+        
+      <li>Drivetrain</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/Open-STEM/Open-STEM.github.io/blob/main/docs/source/api/drivetrain.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="drivetrain">
+<h1>Drivetrain<a class="headerlink" href="#drivetrain" title="Permalink to this heading">¶</a></h1>
+<dl class="py function">
+<dt class="sig sig-object py" id="drivetrain.go_straight">
+<span class="sig-prename descclassname"><span class="pre">drivetrain.</span></span><span class="sig-name descname"><span class="pre">go_straight</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">distance</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None</span></span></span><a class="headerlink" href="#drivetrain.go_straight" title="Permalink to this definition">¶</a></dt>
+<dd><p>Go forward the specified distance in centimeters, and exit function when distance has been reached. Speed is bounded from -1 (reverse at full speed) to 1 (forward at full speed)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>distance</strong> (<em>float</em>) – The distance for the robot to travel (In Centimeters)</p></li>
+<li><p><strong>speed</strong> (<em>float</em>) – The speed for which the robot to travel (Bounded from -1 to 1). Default is half speed forward</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – The amount of time before the robot stops trying to move forward and continues to the next step (In Seconds)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the distance was reached before the timeout</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="drivetrain.go_turn">
+<span class="sig-prename descclassname"><span class="pre">drivetrain.</span></span><span class="sig-name descname"><span class="pre">go_turn</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">turn_degrees</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">speed</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">0.5</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">timeout</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span><span class="w"> </span><span class="o"><span class="pre">=</span></span><span class="w"> </span><span class="default_value"><span class="pre">None</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">bool:</span></span></span><a class="headerlink" href="#drivetrain.go_turn" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn the robot some relative heading given in turnDegrees, and exit function when the robot has reached that heading. Speed is bounded from -1 (turn counterclockwise the relative heading at full speed) to 1 (turn clockwise the relative heading at full speed)</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>turn_degrees</strong> – The number of angle for the robot to turn (In Degrees)</p></li>
+<li><p><strong>speed</strong> (<em>float</em>) – The speed for which the robot to travel (Bounded from -1 to 1). Default is half speed forward.</p></li>
+<li><p><strong>timeout</strong> (<em>float</em>) – The amount of time before the robot stops trying to turn and continues to the next step (In Seconds)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
+<dd class="field-even"><p>if the distance was reached before the timeout</p>
+</dd>
+<dt class="field-odd">Return type<span class="colon">:</span></dt>
+<dd class="field-odd"><p>bool</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="drivetrain.set_effort">
+<span class="sig-prename descclassname"><span class="pre">drivetrain.</span></span><span class="sig-name descname"><span class="pre">set_effort</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left_effort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_effort</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None:</span></span></span><a class="headerlink" href="#drivetrain.set_effort" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the raw effort of both motors individually</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left_effort</strong> – The power (Bounded from -1 to 1) to set the left motor to.</p></li>
+<li><p><strong>right_effort</strong> – The power (Bounded from -1 to 1) to set the right motor to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="drivetrain.stop">
+<span class="sig-prename descclassname"><span class="pre">drivetrain.</span></span><span class="sig-name descname"><span class="pre">stop</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None:</span></span></span><a class="headerlink" href="#drivetrain.stop" title="Permalink to this definition">¶</a></dt>
+<dd><p>Stops both drivetrain motors</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="drivetrain.get_left_encoder_position">
+<span class="sig-prename descclassname"><span class="pre">drivetrain.</span></span><span class="sig-name descname"><span class="pre">get_left_encoder_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float:</span></span></span><a class="headerlink" href="#drivetrain.get_left_encoder_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current position of the left motor’s encoder in revolutions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="drivetrain.get_right_encoder_position">
+<span class="sig-prename descclassname"><span class="pre">drivetrain.</span></span><span class="sig-name descname"><span class="pre">get_right_encoder_position</span></span><span class="sig-paren">(</span><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">float:</span></span></span><a class="headerlink" href="#drivetrain.get_right_encoder_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return the current position of the right motor’s encoder in revolutions.</p>
+</dd></dl>
+
+<dl class="py function">
+<dt class="sig sig-object py" id="drivetrain.set_encoder_position">
+<span class="sig-prename descclassname"><span class="pre">drivetrain.</span></span><span class="sig-name descname"><span class="pre">set_encoder_position</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">left_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">right_position</span></span><span class="p"><span class="pre">:</span></span><span class="w"> </span><span class="n"><span class="pre">float</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">None:</span></span></span><a class="headerlink" href="#drivetrain.set_encoder_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Set the position of the motors’ encoders in revolutions. Note that this does not actually move the motor but just recalibrates the stored encoder value. If only one encoder position is specified, the encoders for each motor will be set to that position.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>left_position</strong> – The distance to recalibrate the left encoder to.</p></li>
+<li><p><strong>right_position</strong> – The distance to recalibrate the left encoder to.</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

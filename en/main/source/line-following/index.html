@@ -1,0 +1,363 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Line following &mdash; OpenSTEM 1.0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+        <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
+        <script src="../../_static/jquery.js"></script>
+        <script src="../../_static/underscore.js"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js"></script>
+        <script src="../../_static/doctools.js"></script>
+        <script src="../../_static/sphinx_highlight.js"></script>
+    
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+  <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../../modules.html" class="icon icon-home"> OpenSTEM
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                main
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../code.html">code module</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../modules.html">OpenSTEM</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../../modules.html">Docs</a> &raquo;</li>
+        
+      <li>Line following</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            
+              <a href="https://github.com/Open-STEM/Open-STEM.github.io/blob/main/docs/source/line-following/index.rst" class="fa fa-github"> Edit on GitHub</a>
+            
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <section id="line-following">
+<h1>Line following<a class="headerlink" href="#line-following" title="Permalink to this heading">¶</a></h1>
+<p>We have always heard our school teachers instructing us to walk in a line, right? So, this task of following a line isn’t something new for you. However, what if I tell you that it’s your turn to teach your robot to follow a line?
+As we start exploring the capabilities of our robot, I think line following is an interesting challenge, to begin with.</p>
+<section id="why-follow-lines">
+<h2>Why follow lines?<a class="headerlink" href="#why-follow-lines" title="Permalink to this heading">¶</a></h2>
+<p>We see lines everywhere, don’t we? The joint between two floor tiles or a linear pattern on the carpet?
+We see lines on the road that separate the oppositely moving traffic. Lines on the roads also highlight special areas like zebra crossings, bicycle lanes, etc. As a roboticist, you might come across a challenge to design software for self-driving cars that might need line following.
+Did you know Tesla uses line following up to some extent as well?
+Isn’t that interesting? You are about to start learning about this cool idea of teaching your robot to follow a line. Something so fundamental and yet so impactful that real cars on the street use it daily.
+So are you excited to begin?</p>
+</section>
+<section id="characterizing-the-sensors">
+<h2>Characterizing the sensors<a class="headerlink" href="#characterizing-the-sensors" title="Permalink to this heading">¶</a></h2>
+<p>So let us start by observing ourselves. How do we see lines and patterns in the environment?
+You may say that our eyes show us everything! My next question is, how do you know that you are looking at a line?
+What is so special about a line that makes it stand out from the other features in your sight? It is dark or bright with respect to its surrounding. Isn’t it?</p>
+<p>That is a clever observation! Now, let us look closer. The difference in color or brightness is caused due to a difference in reflectivity of the material appearing as a line. For our robot, we will be using colored tape on the floor to mimic a line. We will use the difference in the reflectivity of the tape and the ground material to recognize a line and then teach the robot to follow it.</p>
+<p>Are you wondering how can we do that without having a camera? Well, you don’t need a camera. Your robot is equipped with a sensor that distinguishes between different materials based on their incoming light reflections.
+Isn’t that interesting?</p>
+<p>The sensor is manufactured by a company named Pololu. The sensor is a linear array of six Infrared light emitters and receivers. The infrared light emitted by the sensors is reflected from the tape and the floor. Since there is a change in reflectivity between different materials, the reflected light is not the same. The receivers can make out the difference between the reflections from the ground and those from the tape.
+This difference is sensed by the sensor and it shall be enough to recognize and follow a line. Are you excited to learn how that is possible? And what can we do with it? Please read on.
+Please think about what you would receive from the sensor and what would you want the robot to do with this information. Here is a hint, the sensor is going to send reflectivity values to your robot. Now, what can you do with this information?
+Here is how the code could look like :</p>
+<p># Characterize line sensors
+def checkLineSensors():</p>
+<blockquote>
+<div><dl class="simple">
+<dt>while True:</dt><dd><p>print(“Left:”, refl.left(), “Right:”, refl.right())
+time.sleep(0.5)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>checkLineSensors()</p>
+<p>Let us build some motivation for taking on this challenge. Some of the cool things  a robot would be able to do if you teach it to recognize and follow a line are:</p>
+</section>
+<section id="stopping-at-a-line">
+<h2>Stopping at a line<a class="headerlink" href="#stopping-at-a-line" title="Permalink to this heading">¶</a></h2>
+<p>The Robot would be able to approach and stop at a line. Or you could have a no-robot zone and would like your robot to not escape a demarked area. In that case, you can use this algorithm to prevent the robot from crossing a line.
+Or if your robot is in a maze, you would not want it to cross a line, right? These kinds of navigation tasks can be tackled by using line following algorithms.</p>
+<p>Can you think of the logic to execute this task?
+You can continuously read the values from the sensor and the moment the sensor intercepts a line (tape), we will see a reading corresponding to the tape and you can then command the robot to do a certain task.
+Here is how the code would look like:</p>
+<p># Drive upto a line and stop
+def driveToLineAndStop():</p>
+<blockquote>
+<div><p>driveBase.setEffort(0.6, 0.6)
+while refl.left() &lt; 5 and refl.right() &lt; 5:</p>
+<blockquote>
+<div><p>time.sleep(0.01)</p>
+</div></blockquote>
+<p>driveBase.setEffort(0, 0)</p>
+</div></blockquote>
+<p>driveToLineAndStop()</p>
+</section>
+<section id="staying-in-a-circle">
+<h2>Staying in a circle<a class="headerlink" href="#staying-in-a-circle" title="Permalink to this heading">¶</a></h2>
+<p>You could program a robot to go in circles or a specific pattern. You could draw a pattern using this logic. Wouldn’t that be cool?
+Here is a program that instructs the robot to turn around a line:
+def driveToLineAndStop():</p>
+<blockquote>
+<div><dl>
+<dt>while True:</dt><dd><p>driveBase.setEffort(0.6, 0.6)
+while refl.left() &lt; 5 and refl.right() &lt; 5:</p>
+<blockquote>
+<div><p>time.sleep(0.01)</p>
+</div></blockquote>
+<p>driveBase.turn(180)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>driveToLineAndStop()</p>
+<p>Think of how you can use this logic to drive your robot in a circle.</p>
+</section>
+<section id="id1">
+<h2>Line following<a class="headerlink" href="#id1" title="Permalink to this heading">¶</a></h2>
+<p>Some of the industrial robots still follow lines on the shop floor to move around in the factories. Modern self-driving cars use lines on the roads to maintain lanes. And if that excites you, you are going to enjoy what we learn next! So stay tuned.</p>
+<p>Since we know that the tape and ground are going to have different reflectivity values, let us read these values and acknowledge the difference.
+So now, when you get a new reading from the sensor, you can make out if the sensor is above the tape or the ground. Isn’t it?</p>
+<p>To make things interesting, you can use a single sensor or two sensors to do this job. Let us see both of these approaches and decide the best one.</p>
+</section>
+<section id="single-sensor-line-following">
+<h2>Single sensor line following<a class="headerlink" href="#single-sensor-line-following" title="Permalink to this heading">¶</a></h2>
+<p>Can you think of a logic that would need only one sensor to follow a line?
+Here are some hints:</p>
+<blockquote>
+<div><p>If the robot is on the line turn off of it
+If the robot is off the line turn towards it</p>
+</div></blockquote>
+<p>This will result in the robot following an edge of the line. Here is the code for it:
+# Single sensor line tracking
+def oneSensorLineTrack():</p>
+<blockquote>
+<div><dl>
+<dt>while True:</dt><dd><p>high = 0.75
+low = 0.4
+r = refl.right()
+if (r &gt; 5):</p>
+<blockquote>
+<div><p>driveBase.setEffort(high, low)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>else:</dt><dd><p>driveBase.setEffort(low, high)</p>
+</dd>
+</dl>
+<p>time.sleep(0.01)</p>
+</dd>
+</dl>
+</div></blockquote>
+<p>Here is the diagramtic interpretaion of the above code:</p>
+<img alt="source/line-following/single_sensor_line_following.png" class="align-center" src="source/line-following/single_sensor_line_following.png" />
+</section>
+<section id="two-sensor-line-following">
+<h2>Two sensor line following<a class="headerlink" href="#two-sensor-line-following" title="Permalink to this heading">¶</a></h2>
+<p>Similarly here is the logic if you can use two sensors:</p>
+<p># Two sensor digital line tracking
+def twoSensorLineTrack():</p>
+<blockquote>
+<div><dl>
+<dt>while True:</dt><dd><p>high = 0.75
+low = 0.4
+r = refl.right()
+l = refl.left()
+if (r &gt; 5):</p>
+<blockquote>
+<div><p>driveBase.setEffort(high, low)</p>
+</div></blockquote>
+<dl class="simple">
+<dt>elif (l &gt; 5):</dt><dd><p>driveBase.setEffort(low, high)</p>
+</dd>
+<dt>else:</dt><dd><p>driveBase.setEffort(high, high)</p>
+</dd>
+</dl>
+<p>time.sleep(0.01)</p>
+</dd>
+</dl>
+</div></blockquote>
+</section>
+<section id="proportional-control-for-line-following">
+<h2>Proportional control for line following<a class="headerlink" href="#proportional-control-for-line-following" title="Permalink to this heading">¶</a></h2>
+<p>The strategy is that you are trying to minimize the error. The error in the reading from the right or left sensors.
+A clever appraoch would be to add the error value to the left wheel and subtract it from the right wheel. We can introduce a constant gain to improve the correction.</p>
+<p>Here is a sample code:
+def lineTrack():</p>
+<blockquote>
+<div><p>baseEffort = 0.6
+Kp = 0.02
+while True:</p>
+<blockquote>
+<div><p>error = refl.right() - refl.left()
+driveBase.setEffort(0.6 + error * Kp, 0.6 - error * Kp)</p>
+</div></blockquote>
+</div></blockquote>
+<section id="proportional-control-with-one-sensor">
+<h3>Proportional control with one sensor<a class="headerlink" href="#proportional-control-with-one-sensor" title="Permalink to this heading">¶</a></h3>
+</section>
+<section id="proportional-control-with-two-sensors">
+<h3>Proportional control with two sensors<a class="headerlink" href="#proportional-control-with-two-sensors" title="Permalink to this heading">¶</a></h3>
+</section>
+</section>
+<section id="driving-around-a-course-for-best-time">
+<h2>Driving around a course for best time<a class="headerlink" href="#driving-around-a-course-for-best-time" title="Permalink to this heading">¶</a></h2>
+</section>
+</section>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2022
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
